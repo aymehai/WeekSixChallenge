@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/199/xhtml"
+	xmlns:th="www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<title>User Page</title>
+
+<th:block th:replace="base :: head"></th:block>
+</head>
+<body>
+
+	<th:block th:replace="base :: nav"></th:block>
+	<div class="container">
+		<form action="#" th:action="@{/user}" th:object="${user}"
+			method="post">
+			
+			<input type="hidden" th:field="*{id}" />
+			<p>
+				Full Name: <input type="text" th:field="*{username}" />
+				<span th:if="${#fields.hasErrors('username')}"
+					th:errors="*{username}">Name Error</span>
+			</p>
+
+			<p>
+				Email: <input type="text" th:field="*{email}" />
+				<span th:if="${#fields.hasErrors('email')}"
+					th:errors="*{email}">email Error</span>
+			</p>
+
+			<input type="submit" class="btn btn-default" value="Next" />
+		</form>
+	</div>
+</body>
+</html>

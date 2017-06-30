@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/199/xhtml"
+	xmlns:th="www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<title>Education Page</title>
+
+<th:block th:replace="base :: head"></th:block>
+</head>
+<body>
+
+	<th:block th:replace="base :: nav"></th:block>
+	<div class="container">
+		<form action="#" th:action="@{/education}" th:object="${education}"
+			method="post">
+			
+			<input type="hidden" th:field="*{id}" />
+			<p>
+				Education Name: <input type="text" th:field="*{education_name}" />
+				<span th:if="${#fields.hasErrors('education_name')}"
+					th:errors="*{education_name}">Education Name Error</span>
+			</p>
+
+			<p>
+				Education Major: <input type="text" th:field="*{education_major}" />
+				<span th:if="${#fields.hasErrors('education_major')}"
+					th:errors="*{education_major}">Education Major Error</span>
+			</p>
+
+			<p>
+				Enrollment Year: <input type="text" th:field="*{education_start}" />
+				<span th:if="${#fields.hasErrors('education_start')}"
+					th:errors="*{education_start}">Enrollment Year Error</span>
+			</p>
+
+			<p>
+				Graduation Year: <input type="text" th:field="*{education_end}" />
+				<span th:if="${#fields.hasErrors('education_end')}"
+					th:errors="*{education_end}">Graduation Year Error</span>
+			</p>
+
+			<input type="submit" class="btn btn-default" value="Add" />
+			<a type="submit" class="btn btn-default" href="work.html" >Next</a>
+			
+		</form>
+	</div>
+</body>
+</html>

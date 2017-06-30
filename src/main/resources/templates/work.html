@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/199/xhtml"
+	xmlns:th="www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<title>Work Page</title>
+
+<th:block th:replace="base :: head"></th:block>
+</head>
+<body>
+
+	<th:block th:replace="base :: nav"></th:block>
+	<div class="container">
+		<form action="#" th:action="@{/work}" th:object="${work}"
+			method="post">
+			
+			<input type="hidden" th:field="*{id}" />
+			<p>
+				Work Name: <input type="text" th:field="*{work_name}" />
+				<span th:if="${#fields.hasErrors('work_name')}"
+					th:errors="*{work_name}">Work Name Error</span>
+			</p>
+
+			<p>
+				Work position: <input type="text" th:field="*{work_position}" />
+				<span th:if="${#fields.hasErrors('work_position')}"
+					th:errors="*{work_position}">Work Position Error</span>
+			</p>
+
+			<p>
+				Start Year: <input type="text" th:field="*{work_start}" />
+				<span th:if="${#fields.hasErrors('work_start')}"
+					th:errors="*{work_start}">Start Year Error</span>
+			</p>
+
+			<p>
+				End Year: <input type="text" th:field="*{work_end}" />
+				<span th:if="${#fields.hasErrors('work_end')}"
+					th:errors="*{work_end}">End Year Error</span>
+			</p>
+
+			<input type="submit" class="btn btn-default" value="Add" />
+			<a type="submit" class="btn btn-default" href="skills.html" >Next</a>
+			
+		</form>
+	</div>
+</body>
+</html>

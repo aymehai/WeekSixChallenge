@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="en" xmlns="http://www.w3.org/199/xhtml"
+	xmlns:th="www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity4">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
+<title>Work Page</title>
+
+<th:block th:replace="base :: head"></th:block>
+</head>
+<body>
+
+	<th:block th:replace="base :: nav"></th:block>
+	<div class="container">
+		<h1 sec:authorize="isAuthenticated()">
+			<a sec:authentication="name"></a> Resume
+		</h1>
+	</div>
+	<div class="container">
+		<h3>Name And Email</h3>
+		<table class="table table-striped">
+			<tr>
+				<td>Full Name</td>
+				<td>Email</td>
+			</tr>
+			<tr th:each="item : ${userList}">
+				<td th:text="${item.username}"></td>
+				<td th:text="${item.email}"></td>
+			</tr>
+		</table>
+	</div>
+	<div class="container">
+		<h3>Education</h3>
+		<table class="table table-striped">
+			<tr>
+				<td>School Name</td>
+				<td>Major</td>
+				<td>Start Year</td>
+				<td>End Year</td>
+			</tr>
+			<tr th:each="item : ${eduList}">
+				<td th:text="${item.education_name}"></td>
+				<td th:text="${item.education_major}"></td>
+				<td th:text="${item.education_start}"></td>
+				<td th:text="${item.education_end}"></td>
+			</tr>
+		</table>
+	</div>
+	<div class="container">
+		<h3>Work</h3>
+		<table class="table table-striped">
+			<tr>
+				<td>Work Name</td>
+				<td>Position</td>
+				<td>Start Year</td>
+				<td>End Year</td>
+			</tr>
+			<tr th:each="item : ${workList}">
+				<td th:text="${item.work_name}"></td>
+				<td th:text="${item.work_position}"></td>
+				<td th:text="${item.work_start}"></td>
+				<td th:text="${item.work_end}"></td>
+			</tr>
+		</table>
+	</div>
+	<div class="container">
+		<h3>Skills</h3>
+		<table class="table table-striped">
+			<tr>
+				<td>Skill Name</td>
+				<td>Skill Level</td>
+			</tr>
+			<tr th:each="item : ${skillsList}">
+				<td th:text="${item.skills_name}"></td>
+				<td th:text="${item.skills_level}"></td>
+			</tr>
+		</table>
+	</div>
+</body>
+</html>
