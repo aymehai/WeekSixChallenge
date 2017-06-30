@@ -30,11 +30,6 @@ public class ResumeController {
 	@Autowired
 	UserRepository userRepository;
 	
-	String userNameEntry;
-	String userWorkEntry;
-	String userSchoolEntry;
-	String userSkillsEntry;
-	
 	@RequestMapping("/")
 	public String redirectPage() {
 		return "index";
@@ -136,18 +131,5 @@ public class ResumeController {
 		return "results";
 	}
 	
-	// Search Seeker Results Request Mapping
-	
-	@RequestMapping("/searchRec")
-	public  String searchSeekerResultPage() {
-		return "results";
-	}
-	
-	// Search Recruiter Results Request Mapping
-	
-	@RequestMapping("/searchRec")
-	public  String searchRecruiterResultPage() {
-		return "results";
-	}
 	
 }
