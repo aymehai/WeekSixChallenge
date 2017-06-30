@@ -41,8 +41,6 @@
 			<ul class="nav navbar-nav">
 				<li><a href="index">Home</a></li>
 				<li sec:authorize="isAuthenticated() == false"><a href="/login">Login</a></li>
-				<li sec:authorize="hasRole('SEEKER')"><a href="/searchSeek">Seeker Search</a></li>
-				<li sec:authorize="hasRole('RECRUITER')"><a href="/searchRec">Recruiter Search</a></li>
 				<li sec:authorize="isAuthenticated()"><a href="/results">My Resume</a></li>
 				<li sec:authorize="isAuthenticated()"><a href="/logout">Logout</a></li>
 			</ul>
