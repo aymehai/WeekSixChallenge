@@ -7,7 +7,7 @@
 <meta http-equiv="X-UA-Compatible" content="IE=edge" />
 <meta name="viewport" content="width=device-width, initial-scale=1" />
 <!-- The above 3 meta tags *must* come first in the head; any other head content must come *after* these tags -->
-<title>Index Page</title>
+<title>Rec Page</title>
 
 <th:block th:replace="base :: head"></th:block>
 </head>
@@ -15,23 +15,21 @@
 
 	<th:block th:replace="base :: nav"></th:block>
 	<div class="container">
-		<div class="section">
-			<div class="starter-template">
-				<p class="lead">
-					<a href="user.html" class="btn btn-default"> Start Resume </a>
-				</p>
-				<div sec:authorize="hasRole('SEEKER')" class="btn btn-default">
-					<a href="/searchSeek">Seeker Search</a>
-				</div>
-				<div sec:authorize="hasRole('RECRUITER')" class="btn btn-default">
-					<a href="/searchRec">Seeker Search</a>
-				</div>
+			<p>
+				Search Name:<input type="text" /><a type="submit" class="btn btn-default" href="results.html" ></a>
+			</p>
 
-			</div>
-		</div>
+			<p>
+				Search School:<input type="text" /><a type="submit" class="btn btn-default" href="results.html"></a>
+			</p>
+
+			<p>
+				Search Work:<input type="text" /><a type="submit" class="btn btn-default" href="results.html"></a>
+			</p>
+
+			<p>
+				Search Skills:<input type="text" /><a type="submit" class="btn btn-default" href="results.html"></a>
+			</p>
 	</div>
-	<!-- /.container -->
-
-	<th:block th:replace="base :: footlinks"></th:block>
 </body>
 </html>
