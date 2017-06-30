@@ -40,6 +40,11 @@ public class ResumeController {
 		return "index";
 	}
 	
+	@RequestMapping("/search")
+	public String searchPage() {
+		return "search";
+	}
+	
     @RequestMapping("/login")
     public String login(){
         return "login";
