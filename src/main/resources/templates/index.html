@@ -20,10 +20,10 @@
 				<p class="lead">
 					<a href="user.html" class="btn btn-default"> Start Resume </a>
 				</p>
-				<div sec:authorize="hasRole('SEEKER')" class="btn btn-default">
+				<div sec:authorize="hasAuthority('SEEKER')" class="btn btn-default">
 					<a href="searchSeek.html">Seeker Search</a>
 				</div>
-				<div sec:authorize="hasRole('RECRUITER')" class="btn btn-default">
+				<div sec:authorize="hasAuthority('RECRUITER')" class="btn btn-default">
 					<a href="searchRec.html">Seeker Search</a>
 				</div>
 
