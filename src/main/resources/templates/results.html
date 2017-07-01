@@ -42,10 +42,10 @@
 				<td>End Year</td>
 			</tr>
 			<tr th:each="item : ${eduList}">
-				<td th:text="${item.education_name}"></td>
-				<td th:text="${item.education_major}"></td>
-				<td th:text="${item.education_start}"></td>
-				<td th:text="${item.education_end}"></td>
+				<td th:text="${item.educationName}"></td>
+				<td th:text="${item.educationMajor}"></td>
+				<td th:text="${item.educationStart}"></td>
+				<td th:text="${item.educationEnd}"></td>
 			</tr>
 		</table>
 	</div>
@@ -59,10 +59,10 @@
 				<td>End Year</td>
 			</tr>
 			<tr th:each="item : ${workList}">
-				<td th:text="${item.work_name}"></td>
-				<td th:text="${item.work_position}"></td>
-				<td th:text="${item.work_start}"></td>
-				<td th:text="${item.work_end}"></td>
+				<td th:text="${item.workName}"></td>
+				<td th:text="${item.workPosition}"></td>
+				<td th:text="${item.workStart}"></td>
+				<td th:text="${item.workEnd}"></td>
 			</tr>
 		</table>
 	</div>
@@ -74,8 +74,8 @@
 				<td>Skill Level</td>
 			</tr>
 			<tr th:each="item : ${skillsList}">
-				<td th:text="${item.skills_name}"></td>
-				<td th:text="${item.skills_level}"></td>
+				<td th:text="${item.skillsName}"></td>
+				<td th:text="${item.skillsLevel}"></td>
 			</tr>
 		</table>
 	</div>

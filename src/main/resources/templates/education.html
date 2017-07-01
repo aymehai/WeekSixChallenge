@@ -20,27 +20,27 @@
 			
 			<input type="hidden" th:field="*{id}" />
 			<p>
-				Education Name: <input type="text" th:field="*{education_name}" />
-				<span th:if="${#fields.hasErrors('education_name')}"
-					th:errors="*{education_name}">Education Name Error</span>
+				Education Name: <input type="text" th:field="*{educationName}" />
+				<span th:if="${#fields.hasErrors('educationName')}"
+					th:errors="*{educationName}">Education Name Error</span>
 			</p>
 
 			<p>
-				Education Major: <input type="text" th:field="*{education_major}" />
-				<span th:if="${#fields.hasErrors('education_major')}"
-					th:errors="*{education_major}">Education Major Error</span>
+				Education Major: <input type="text" th:field="*{educationMajor}" />
+				<span th:if="${#fields.hasErrors('educationMajor')}"
+					th:errors="*{educationMajor}">Education Major Error</span>
 			</p>
 
 			<p>
-				Enrollment Year: <input type="text" th:field="*{education_start}" />
-				<span th:if="${#fields.hasErrors('education_start')}"
-					th:errors="*{education_start}">Enrollment Year Error</span>
+				Enrollment Year: <input type="text" th:field="*{educationStart}" />
+				<span th:if="${#fields.hasErrors('educationStart')}"
+					th:errors="*{educationStart}">Enrollment Year Error</span>
 			</p>
 
 			<p>
-				Graduation Year: <input type="text" th:field="*{education_end}" />
-				<span th:if="${#fields.hasErrors('education_end')}"
-					th:errors="*{education_end}">Graduation Year Error</span>
+				Graduation Year: <input type="text" th:field="*{educationEnd}" />
+				<span th:if="${#fields.hasErrors('educationEnd')}"
+					th:errors="*{educationEnd}">Graduation Year Error</span>
 			</p>
 
 			<input type="submit" class="btn btn-default" value="Add" />

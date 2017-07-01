@@ -21,9 +21,9 @@ public class Work {
 	private String workPosition;
 	
 	@NotNull
-	private int workStart;
+	private String workStart;
 	
-	private int workEnd;
+	private String workEnd;
 
 	public long getId() {
 		return id;
@@ -49,19 +49,19 @@ public class Work {
 		this.workPosition = workPosition;
 	}
 
-	public int getWorkStart() {
+	public String getWorkStart() {
 		return workStart;
 	}
 
-	public void setWorkStart(int workStart) {
+	public void setWorkStart(String workStart) {
 		this.workStart = workStart;
 	}
 
-	public int getWorkEnd() {
+	public String getWorkEnd() {
 		return workEnd;
 	}
 
-	public void setWorkEnd(int workEnd) {
+	public void setWorkEnd(String workEnd) {
 		this.workEnd = workEnd;
 	}
 

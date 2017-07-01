@@ -120,7 +120,7 @@ public class ResumeController {
 	}
 	
 	@PostMapping("/skills")
-	public String processSkillsPage(@Valid Skills skills, BindingResult bindingResult, Model model) {
+	public String processWorkPage(@Valid Skills skills, BindingResult bindingResult, Model model) {
 		if (bindingResult.hasErrors()) {
 			return "skills";
 		}
