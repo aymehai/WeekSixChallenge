@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org/thymeleaf-extras-springsecurity3">
+<head>
+<meta charset="utf-8" />
+<meta http-equiv="X-UA-Compatible" content="IE=edge" />
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+<title>Registration Page</title>
+<th:block th:replace="base :: head"></th:block>
+</head>
+<body>
+	<th:block th:replace="base :: nav"></th:block>
+
+	<div class="container">
+		<h4>New User Registration</h4>
+
+		<form action="#" th:action="@{/registration}" th:object="${user}"
+			method="post">
+			<div class="form-group">
+				<p>
+					First Name: <input type="text" th:field="*{firstName}" /> <span
+						th:if="${#fields.hasErrors('firstName')}" th:errors="*{firstName}">First
+						Name Error</span>
+				</p>
+			</div>
+			<div class="form-group">
+				<p>
+					Last Name: <input type="text" th:field="*{lastName}" /> <span
+						th:if="${#fields.hasErrors('lastName')}" th:errors="*{lastName}">Last
+						Name Error</span>
+				</p>
+			</div>
+			<div class="form-group">
+				<p>
+					Email: <input type="text" th:field="*{email}" /> <span
+						th:if="${#fields.hasErrors('email')}" th:errors="*{email}">Email
+						Error</span>
+				</p>
+			</div>
+			<div class="form-group">
+				<p>
+					Username: <input type="text" th:field="*{username}" /> <span
+						th:if="${#fields.hasErrors('username')}" th:errors="*{username}">Username
+						Error</span>
+				</p>
+			</div>
+			<div class="form-group">
+				<p>
+					Password: <input type="password" th:field="*{password}" /> <span
+						th:if="${#fields.hasErrors('password')}" th:errors="*{password}">Graduation
+						Year Error</span>
+				</p>
+			</div>
+			<div class="form-group" th:action="@{/registration}" th:object="${role}">
+				<select name="roleResult">
+					<option th:field="*{role}" value="SEEKER">Seeker</option>
+					<option th:field="*{role}" value="RECRUITER">Recruiter</option>
+				</select>
+			</div>
+			<input type="submit" class="btn btn-default" value="register" />
+
+		</form>
+
+	</div>
+	<!-- /.container -->
+
+</body>
+</html>
